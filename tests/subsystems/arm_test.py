@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from subsystems.arm import (
+from src.subsystems.arm import (
     _convert_sensor_unit_to_angle,
     _convert_angle_to_sensor_unit,
     Arm,

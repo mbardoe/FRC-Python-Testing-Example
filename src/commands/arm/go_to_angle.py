@@ -1,12 +1,13 @@
 import commands2
 
-from subsystems.arm import Arm
+from src.subsystems.arm import Arm
 
 
 class GoToAngle(commands2.CommandBase):
     def __init__(self, target_angle: float, arm: Arm, angle_tolerance: float = 2):
+        super().__init__()
         self.arm = arm
-        self.target_angle = self.target_angle
+        self.target_angle = target_angle
         self.angle_tolerance = angle_tolerance
         self.addRequirements(arm)
 

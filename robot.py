@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import commands2.button
 import wpilib
-
-from commands.arm.go_to_angle import GoToAngle
-from subsystems.arm import Arm
+from ctre import WPI_TalonFX as TalonFX
+from src.commands.arm.go_to_angle import GoToAngle
+from src.subsystems.arm import Arm
 
 
 class MyRobot(wpilib.TimedRobot):
@@ -12,12 +12,13 @@ class MyRobot(wpilib.TimedRobot):
     def robotInit(self):
         """Robot-wide initialization code should go here."""
         self.lstick = wpilib.Joystick(0)
-        self.motor = wpilib.Talon(3)
+        self.motor = wpilib.PWMMotorController("motor1",3)
+
 
         self.timer = wpilib.Timer()
         self.loops = 0
 
-        self.arm = Arm(0)
+        self.arm = Arm(4)
 
     def autonomousInit(self):
         """Called only at the beginning of autonomous mode."""

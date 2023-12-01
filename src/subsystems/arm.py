@@ -14,7 +14,7 @@ class Arm(commands2.SubsystemBase):
         super().__init__()
 
     def set_angle(self, angle: float) -> None:
-        target_sensor_units = self._convert_angle_to_sensor_unit(angle)
+        target_sensor_units = _convert_angle_to_sensor_unit(angle)
         self.neo_pid_controller.setReference(
             target_sensor_units, CANSparkMax.ControlType.kPosition
         )
