@@ -45,7 +45,7 @@ class MyRobot(wpilib.TimedRobot):
             GoToAngle(10, self.arm)
         )
 
-        commands2.button.JoystickButton(self.lstick, 1).whenPressed(
+        commands2.button.JoystickButton(self.lstick, 2).whenPressed(
             GoToAngle(50, self.arm)
         )
 
